@@ -68,7 +68,7 @@ function [bim, zmat_orig, C0s_inv, SVD_proj_weights] = prep_weights(bfile, z_sta
             zmat_orig.(stat{:})(zmat_ind, keep) = chr_zmat.zmat_orig(snp_ind, :);
             if stat{:} =='minp'
                 % Only preseverve most significant snp
-                z_orig_tmp = zmat_orig.(stat{:})(zmat_ind, :);
+                z_orig_tmp = abs(zmat_orig.(stat{:})(zmat_ind, :));
                 [~, max_ind] = max(z_orig_tmp, [], 2);
                 mask = logical(zeros(length(max_ind), size(z_orig_tmp, 2))); % Mask to preserve only top zstat
                 for j = 1:length(max_ind), mask(j, max_ind(j)) = true; end

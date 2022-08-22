@@ -23,7 +23,7 @@ function [bim_survive] = py_prune(bim, pval_file, stat)
     status = system(py_clump_cmd);
 
     % Read in ressults
-    clumped = readtable([clump_out, '.indep.csv'], 'FileType', 'text', 'Delimiter', '\t');
+    clumped = readtable([clump_out, '.loci.csv'], 'FileType', 'text', 'Delimiter', '\t');
     bim_survive = ismember(bim{:, 'SNP'}, clumped{:, 'LEAD_SNP'});
 end
 
