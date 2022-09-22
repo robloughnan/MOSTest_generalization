@@ -1,12 +1,30 @@
 function [bim, zmat_orig, C0s_inv, SVD_proj_weights] = prep_weights(bfile, z_stats_file, pval_file, bim_target)
+%% Functon reads in results from discovery analysis (performed in '../mostest/mostest_light.m'), performs pruning to 
+% identify loci, extracts z-stats for these loci and regularization matrix from phenotype correlation matrix for PVS replication.
+% Arguments:
+%   bfile (string): bfile prefix (PLINK file) on which disovery was performed
+%   z_stats_file (string): z-stat files output from ../mostest/mostest_light.m. Argument expected of form '/path/to/zstats_%i.mat'
+%                 '%i' is the evaluated using sprintf for each chromosome number
+%   pval_file (string): p value file path output from ../mostest/mostest_light.m
+%   bim_target (table): optional argument if the validation cohort (target) has a different set of SNPs
+%                       this argument will restrict to prunning and computing weights to overlaping SNPs
+% Returns:
+%   bim (table): table generated from [bfile].bim with extra columns 'minp_survive' and 'mostest_survive'
+%                indicating if SNP is lead SNP of loci from prunning
+%   zmat_orig (struct): two fields 'minp' and 'mostest' each holding matrix of z-stat weights from discovery for independantly 
+%                       idenitfied loci
+%   C0s_inv (struct): each field consists of a regularized coavriance matrix (from discovery phenotypes) for applying to 
+%                     z-stats to generated optimally decorelated PVS weights
+%   SVD_proj_weights (struct): No longer used. Was used for development if phenotype was SVD decomposed at begining discovery,
+%                              this argument allowed same SVD weights to be used for replication cohort
+
     filpth = fileparts(mfilename('fullpath'));
     addpath([filpth '/../mostest']);
     r2_thresh=0.2;
     
-
+    % Read in bim file
     bim = readtable([bfile, '.bim'], 'FileType', 'Text', 'Delimiter', '\t');
     bim.Properties.VariableNames(1:6) = {'chr', 'id', 'na', 'bp', 'a1', 'a2'};
-
     
     pvals = load(pval_file);
     % Add N column

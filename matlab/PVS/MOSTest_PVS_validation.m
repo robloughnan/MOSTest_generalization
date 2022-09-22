@@ -67,7 +67,7 @@ if remap_vert
     brain_dat = remap_verticies(icsurfs, icsurfs_orig, icnvert, icnum, brain_dat, 'new2orig');
 end
 
-% Read in relevant ABCD SNPs (subject x SNPs)
+% Read in relevant validation SNPs (subject x SNPs)
 valid_genotypes = read_genetics_chrms(valid_bfile, bim_survive, 1, 1, true, false);
 
 % Align genetics and brain imaging
