@@ -1,0 +1,102 @@
+***********************************************************************
+* sumstats.py: utilities for GWAS summary statistics
+* Version 1.0.0
+* (C) 2016-2018 Oleksandr Frei and Alexey A. Shadrin
+* Norwegian Centre for Mental Disorders Research / University of Oslo
+* GNU General Public License v3
+***********************************************************************
+Call: 
+./sumstats.py clump \
+	--sumstats ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats \
+	--bfile-chr /home/rloughna/data/1000kGenome/phase3_EUR/chr@ \
+	--exclude-ranges ['6:25119106-33854733'] \
+	--out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump
+Beginning analysis at Wed Oct  5 17:23:21 2022 by rloughna, host mmil-A-ip14
+Exclude range: chromosome 6 from BP 25119106 to 33854733
+Reading ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats...
+Read 1000 SNPs from --sumstats file
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr22 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr22.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr22
+Done. Exit code: 0
+On CHR 22 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr21 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr21.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr21
+Done. Exit code: 0
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr21 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr21.clumped --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.1 --clump-kb 1e9 --clump-snp-field SNP --clump-field P --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/lead.chr21
+Done. Exit code: 0
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr21 --r2 --ld-window 10000 --ld-window-r2 0.6 --ld-snp-list ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr21.clumped.snps --out  ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr21
+Done. Exit code: 0
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr20 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr20.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr20
+Done. Exit code: 0
+On CHR 20 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr19 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr19.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr19
+Done. Exit code: 0
+On CHR 19 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr18 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr18.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr18
+Done. Exit code: 0
+On CHR 18 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr17 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr17.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr17
+Done. Exit code: 0
+On CHR 17 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr16 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr16.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr16
+Done. Exit code: 0
+On CHR 16 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr15 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr15.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr15
+Done. Exit code: 0
+On CHR 15 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr14 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr14.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr14
+Done. Exit code: 0
+On CHR 14 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr13 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr13.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr13
+Done. Exit code: 0
+On CHR 13 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr12 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr12.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr12
+Done. Exit code: 0
+On CHR 12 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr11 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr11.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr11
+Done. Exit code: 0
+On CHR 11 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr10 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr10.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr10
+Done. Exit code: 0
+On CHR 10 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr9 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr9.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr9
+Done. Exit code: 0
+On CHR 9 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr8 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr8.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr8
+Done. Exit code: 0
+On CHR 8 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr7 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr7.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr7
+Done. Exit code: 0
+On CHR 7 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr6 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr6.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr6
+Done. Exit code: 0
+On CHR 6 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr5 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr5.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr5
+Done. Exit code: 0
+On CHR 5 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr4 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr4.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr4
+Done. Exit code: 0
+On CHR 4 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr3 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr3.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr3
+Done. Exit code: 0
+On CHR 3 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr2 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr2.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr2
+Done. Exit code: 0
+On CHR 2 no variants pass significance threshold
+Execute command: plink --bfile /home/rloughna/data/1000kGenome/phase3_EUR/chr1 --clump ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/sumstats.chr1.csv --clump-p1 5e-08 --clump-p2 1 --clump-r2 0.6 --clump-kb 1e9 --clump-snp-field SNP --clump-field PVAL --out ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp/indep.chr1
+Done. Exit code: 0
+On CHR 1 no variants pass significance threshold
+9 independent significant SNPs, 9 lead SNPs
+Merge locus 2 to 1
+Merge locus 3 to 1
+Merge locus 4 to 1
+Merge locus 5 to 1
+Merge locus 6 to 1
+Merge locus 7 to 1
+Merge locus 8 to 1
+Merge locus 9 to 1
+9 lead SNPs reported to ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.lead.csv
+9 loci reported to ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.loci.csv
+314 candidate SNPs reported to ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.snps.csv
+9 independent significant SNPs reported to ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.snps.csv
+Saving intermediate files to ../../dummy_data/zmat_mostest_disc_pvals_minp.sumstats.clump.temp.tar.gz
+Analysis finished at Wed Oct  5 17:23:27 2022
+Total time elapsed: 6.62s

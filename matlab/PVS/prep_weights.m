@@ -1,4 +1,4 @@
-function [bim, zmat_orig, C0s_inv, SVD_proj_weights] = prep_weights(bfile, z_stats_file, pval_file, bim_target)
+function [bim, zmat_orig, C0s_inv, SVD_proj_weights] = prep_weights(bfile, z_stats_file, pval_file, LD_ref, py2_kern, bim_target)
 %% Functon reads in results from discovery analysis (performed in '../mostest/mostest_light.m'), performs pruning to 
 % identify loci, extracts z-stats for these loci and regularization matrix from phenotype correlation matrix for PVS replication.
 % Arguments:
@@ -38,7 +38,7 @@ function [bim, zmat_orig, C0s_inv, SVD_proj_weights] = prep_weights(bfile, z_sta
         bim{:, [stat{:}, '_pval']} = -1*(pval_vec);
         bim{~pvals.ivec_snp_good, [stat{:}, '_pval']} = NaN;
         if ~exist('bim_target', 'var')
-            bim{:, [stat{:}, '_survive']} = py_prune(bim, pval_file, stat{:}); % plink prune
+            bim{:, [stat{:}, '_survive']} = py_prune(bim, pval_file, stat{:}, LD_ref, py2_kern); % plink prune
             % bim{:, [stat{:}, '_survive']} = prune(bfile, pval_vec, log10(5E-8), r2_thresh);
         else
             % Set bim survive to target - to enable those snps to be saved

@@ -26,13 +26,15 @@ if ~exist('miss_indiv', 'var'), miss_indiv = 0.05; end;
 if ~exist('remap_vert', 'var'), remap_vert = false; end; % Maps verticies from new2orig (sometimes needed for ABCD)
 if ~exist('create_plots', 'var'), create_plots = false; end;
 if ~exist('save_pvs', 'var'), save_pvs = false; end;
+if ~exist('force_compute_weights', 'var'), force_compute_weights=true; end % if set to false will read in pre-computed weights
+
 
 tic;
 % Prepare weights
 save_weights_file = strrep(disc_pfile, 'pvals', 'weights');
-if ~exist('weights_file', 'var') && ~isfile(save_weights_file)
+if (~exist('weights_file', 'var') && ~isfile(save_weights_file)) || force_compute_weights
     fprintf('Preping weights\n');
-    [bim, zmat_orig, C0s_inv, SVD_proj_weights] = prep_weights(disc_bfile, disc_zstats, disc_pfile);
+    [bim, zmat_orig, C0s_inv, SVD_proj_weights] = prep_weights(disc_bfile, disc_zstats, disc_pfile, LD_ref, py2_kern);
     survive = bim{:, 'minp_survive'} | bim{:, 'most_survive'};
     bim_survive = bim(survive, :);
     save(save_weights_file, '-v7.3', 'bim_survive', 'zmat_orig', 'C0s_inv', 'SVD_proj_weights');
